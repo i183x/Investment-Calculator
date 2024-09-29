@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "investment-calculator-krishna",
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "__/._",
+      "__/node_modules/__"
+    ],
+    "rewrites": [
+      {
+        "source": "_*",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

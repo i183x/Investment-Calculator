@@ -1,70 +1,278 @@
-# Getting Started with Create React App
+# Investment Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Investment Calculator Logo](./src/assets/images/logo.png)
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Introduction](#introduction)
+- [Features](#features)
+- [Demo](#demo)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running Locally](#running-locally)
+  - [Building for Production](#building-for-production)
+  - [Deploying](#deploying)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+- [Contact](#contact)
 
-### `npm start`
+## Introduction
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Welcome to the **Investment Calculator**! This web application allows users to calculate and visualize their investment growth over time based on various parameters such as lump sum investment, Compound Annual Growth Rate (CAGR), investment duration, and yearly additions. Leveraging modern web technologies, the application offers interactive 3D visualizations to provide a clear and engaging understanding of investment outcomes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Real-Time Calculations:** Instant computation of investment growth based on user inputs.
+- **Interactive 3D Visualizations:** Dynamic line and pie charts rendered using Three.js for an immersive experience.
+- **Responsive Design:** Optimized for various device sizes, ensuring a seamless user experience on desktops, tablets, and mobile devices.
+- **Dark Mode:** Toggle between light and dark themes for comfortable viewing in different environments.
+- **Form Validation:** Robust input validation using React Hook Form and Yup to ensure accurate and meaningful calculations.
+- **Accessibility:** Designed with accessibility in mind, ensuring usability for all users.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Demo
 
-### `npm run build`
+![Investment Calculator Demo](./demo/demo-screenshot-light.png)
+![Investment Calculator Demo](./demo/demo-screenshot-dark.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Frontend:**
+  - [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
+  - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for rapid UI development.
+  - [React Hook Form](https://react-hook-form.com/) - For managing form state and validation.
+  - [Yup](https://github.com/jquense/yup) - For schema validation.
+- **3D Visualization:**
+  - [Three.js](https://threejs.org/) - A JavaScript 3D library.
+  - [@react-three/fiber](https://github.com/pmndrs/react-three-fiber) - A React renderer for Three.js.
+  - [@react-three/drei](https://github.com/pmndrs/drei) - Useful helpers for react-three-fiber.
+- **Deployment:**
+  - [Firebase Hosting](https://firebase.google.com/products/hosting) - Fast and secure web hosting.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `npm run eject`
+Follow these instructions to set up and run the project locally on your machine.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prerequisites
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Ensure you have the following installed on your machine:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [npm](https://www.npmjs.com/) (comes with Node.js) or [Yarn](https://yarnpkg.com/)
+- [Git](https://git-scm.com/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Installation
 
-## Learn More
+1. **Clone the Repository:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   git clone https://github.com/yourusername/investment-calculator.git
+   cd investment-calculator
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **Install Dependencies:**
 
-### Code Splitting
+   Using npm:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```bash
+   npm install
+   ```
 
-### Analyzing the Bundle Size
+   Or using Yarn:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```bash
+   yarn install
+   ```
 
-### Making a Progressive Web App
+### Running Locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Start the development server:
 
-### Advanced Configuration
+Using npm:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+npm start
+```
 
-### Deployment
+Or using Yarn:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+yarn start
+```
 
-### `npm run build` fails to minify
+The application will run in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The page will reload if you make edits.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Building for Production
+
+Create an optimized production build:
+
+Using npm:
+
+```bash
+npm run build
+```
+
+Or using Yarn:
+
+```bash
+yarn build
+```
+
+This will create a `build` directory with the production build of your app.
+
+### Deploying
+
+Deploy the application to Firebase Hosting.
+
+1. **Install Firebase CLI:**
+
+   Using npm:
+
+   ```bash
+   npm install -g firebase-tools
+   ```
+
+   Or using Yarn:
+
+   ```bash
+   yarn global add firebase-tools
+   ```
+
+2. **Login to Firebase:**
+
+   ```bash
+   firebase login
+   ```
+
+3. **Initialize Firebase in Your Project:**
+
+   ```bash
+   firebase init
+   ```
+
+   - Select **Hosting**.
+   - Choose the existing Firebase project or create a new one.
+   - Set `build` as the public directory.
+   - Configure as a single-page app by replying **Yes**.
+   - Do not overwrite `index.html` if prompted.
+
+4. **Deploy to Firebase:**
+
+   ```bash
+   firebase deploy
+   ```
+
+   Your application will be deployed and accessible via the Firebase-provided URL.
+
+## Usage
+
+1. **Input Parameters:**
+   - **Lump Sum Amount:** The initial investment amount.
+   - **CAGR (%):** Compound Annual Growth Rate.
+   - **Number of Years:** Duration of the investment.
+   - **Yearly Addition:** Additional investment made at the end of each year.
+
+2. **Calculate:**
+   - Click the **Calculate** button to view the investment growth and distribution.
+
+3. **View Results:**
+   - **Net Amount:** Total investment value after the specified duration.
+   - **Total Invested:** Sum of the initial investment and yearly additions.
+   - **Total Profit:** Net amount minus the total invested.
+
+4. **Visualizations:**
+   - **Line Chart:** Displays the growth of the investment over the years.
+   - **Pie Chart:** Shows the distribution between the invested amount and the return on investment (ROI).
+
+5. **Toggle Dark Mode:**
+   - Use the toggle button in the header to switch between light and dark themes.
+
+## Project Structure
+
+```
+investment-calculator/
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+├── src/
+│   ├── assets/
+│   │   └── images/
+│   │       └── logo.png
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   │   ├── InvestmentForm.jsx
+│   │   ├── ResultDisplay.jsx
+│   │   ├── Visualization.jsx
+│   │   ├── LineChart.jsx
+│   │   ├── PieChart.jsx
+│   │   └── ErrorBoundary.jsx
+│   ├── hooks/
+│   │   └── useDarkMode.js
+│   ├── styles/
+│   │   └── globals.css
+│   ├── utils/
+│   │   └── calculations.js
+│   ├── App.jsx
+│   ├── index.js
+│   └── setupTests.js
+├── .gitignore
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── README.md
+└── yarn.lock / package-lock.json
+```
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. **Fork the Repository**
+
+2. **Create a New Branch:**
+
+   ```bash
+   git checkout -b feature/YourFeatureName
+   ```
+
+3. **Commit Your Changes:**
+
+   ```bash
+   git commit -m "Add your detailed description of the feature"
+   ```
+
+4. **Push to the Branch:**
+
+   ```bash
+   git push origin feature/YourFeatureName
+   ```
+
+5. **Open a Pull Request**
+
+Please ensure your code adheres to the project's coding standards and passes all linting and testing checks.
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE).
+
+## Acknowledgements
+
+- [React](https://reactjs.org/)
+- [Three.js](https://threejs.org/)
+- [@react-three/fiber](https://github.com/pmndrs/react-three-fiber)
+- [@react-three/drei](https://github.com/pmndrs/drei)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Yup](https://github.com/jquense/yup)
+- [Firebase Hosting](https://firebase.google.com/products/hosting)
+
+## Contact
+
+Made with ❤️ by [**Krishna Purwar**](https://www.linkedin.com/in/i183x/)
+
+---
